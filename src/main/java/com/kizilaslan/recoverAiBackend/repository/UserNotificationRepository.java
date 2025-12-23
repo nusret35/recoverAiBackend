@@ -1,0 +1,19 @@
+package com.kizilaslan.recoverAiBackend.repository;
+
+
+import com.kizilaslan.recoverAiBackend.model.UserNotification;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+import java.util.UUID;
+
+@Repository
+public interface UserNotificationRepository extends JpaRepository<UserNotification, UUID> {
+
+    List<UserNotification> findByUserIdOrderByCreatedAtAsc(UUID userId);
+
+    List<UserNotification> findByUserIdOrderByCreatedAtDesc(UUID userId);
+
+    UserNotification findByUserIdAndId(UUID userId, UUID notificationId);
+}

@@ -1,0 +1,1 @@
+migrate -path ../db/migrations -database "postgres://vitaloop-admin:e898283a-2096-4094-b667-7e406f4f8a0f@localhost:5432/vitaloop?sslmode=disable" up
